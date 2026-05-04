@@ -16,6 +16,7 @@
 
 * {
   box-sizing: border-box;
+  min-width: 0;
 }
 
 html {
@@ -31,6 +32,22 @@ body {
     linear-gradient(180deg, #0f172a 0%, #111827 48%, #0b1120 100%);
   font-family: var(--font-inter);
   overflow-x: hidden;
+}
+
+main {
+  overflow-x: clip;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+li,
+a,
+span,
+button {
+  overflow-wrap: anywhere;
 }
 
 button,

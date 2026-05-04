@@ -26,17 +26,17 @@ export function CodeShowcase({ title, description, code, language = "tsx", child
 
   return (
     <div className="overflow-hidden rounded-lg border border-slate-700/50 bg-[#0f172a]/50 shadow-xl">
-      <div className="p-6 border-b border-slate-700/50">
-        <h3 className="text-xl font-bold font-outfit text-white mb-2">{title}</h3>
+      <div className="border-b border-slate-700/50 p-4 sm:p-6">
+        <h3 className="mb-2 font-outfit text-lg font-bold text-white sm:text-xl">{title}</h3>
         <p className="text-slate-400 text-sm leading-relaxed">{description}</p>
       </div>
 
-      <div className="flex items-center justify-between px-4 py-2 border-b border-slate-700/50 bg-slate-800/30">
+      <div className="flex flex-col gap-2 border-b border-slate-700/50 bg-slate-800/30 px-3 py-2 sm:flex-row sm:items-center sm:justify-between sm:px-4">
         <div className="flex gap-2">
           <button
             onClick={() => setActiveTab("preview")}
             className={cn(
-              "flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-all",
+              "flex flex-1 items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-all sm:flex-none sm:px-4",
               activeTab === "preview" 
                 ? "bg-sky-500/10 text-sky-400 shadow-[inset_0_-2px_0_0_#38bdf8]" 
                 : "text-slate-400 hover:text-slate-200 hover:bg-slate-700/30"
@@ -47,7 +47,7 @@ export function CodeShowcase({ title, description, code, language = "tsx", child
           <button
             onClick={() => setActiveTab("code")}
             className={cn(
-              "flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-all",
+              "flex flex-1 items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-all sm:flex-none sm:px-4",
               activeTab === "code" 
                 ? "bg-indigo-500/10 text-indigo-400 shadow-[inset_0_-2px_0_0_#818cf8]" 
                 : "text-slate-400 hover:text-slate-200 hover:bg-slate-700/30"
@@ -60,7 +60,7 @@ export function CodeShowcase({ title, description, code, language = "tsx", child
         {activeTab === "code" && (
           <button 
             onClick={handleCopy}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-700/50 transition-colors"
+            className="flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors hover:bg-slate-700/50 hover:text-white sm:justify-start"
           >
             {copied ? <Check size={14} className="text-emerald-400" /> : <Copy size={14} />}
             {copied ? "Copiado!" : "Copiar"}
@@ -68,7 +68,7 @@ export function CodeShowcase({ title, description, code, language = "tsx", child
         )}
       </div>
 
-      <div className="relative bg-[#0b1120] min-h-[300px]">
+      <div className="relative min-h-[260px] bg-[#0b1120] sm:min-h-[300px]">
         <AnimatePresence mode="wait">
           {activeTab === "preview" ? (
             <motion.div
@@ -77,7 +77,7 @@ export function CodeShowcase({ title, description, code, language = "tsx", child
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="p-8 flex items-center justify-center min-h-[300px]"
+              className="flex min-h-[260px] items-center justify-center p-4 sm:min-h-[300px] sm:p-8"
             >
               <div className="w-full max-w-md">
                 {children}
@@ -90,14 +90,14 @@ export function CodeShowcase({ title, description, code, language = "tsx", child
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="p-4 overflow-x-auto text-sm min-h-[300px]"
+              className="min-h-[260px] overflow-x-auto p-3 text-xs sm:min-h-[300px] sm:p-4 sm:text-sm"
             >
               <Highlight theme={themes.nightOwl} code={code} language={language}>
                 {({ className, style, tokens, getLineProps, getTokenProps }) => (
                   <pre className={className} style={{ ...style, backgroundColor: "transparent", margin: 0 }}>
                     {tokens.map((line, i) => (
                       <div key={i} {...getLineProps({ line })} className="table-row">
-                        <span className="table-cell text-right pr-4 text-slate-600 select-none">
+                        <span className="table-cell select-none pr-3 text-right text-slate-600 sm:pr-4">
                           {i + 1}
                         </span>
                         <span className="table-cell">

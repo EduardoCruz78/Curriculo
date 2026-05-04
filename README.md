@@ -119,6 +119,25 @@ Na Vercel, use:
 - Build command: `npm run build`
 - Output: automático do Next.js
 
+Este repositório também possui um `vercel.json` para forçar a Vercel a tratar o projeto como Next.js:
+
+```json
+{
+  "framework": "nextjs",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev -- --port $PORT"
+}
+```
+
+Se aparecer o erro `No entrypoint found`, verifique no painel da Vercel:
+
+- Root Directory: deve estar vazio ou apontar para a raiz do repositório.
+- Framework Preset: `Next.js`.
+- Build Command: `npm run build`.
+- Install Command: `npm install`.
+- Output Directory: deixe automático, sem preencher manualmente.
+
 ## Próximos passos planejados
 
 - Criar uma segunda versão separada do currículo para C#/.NET.
