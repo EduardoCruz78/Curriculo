@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Inter", "Inter Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+}
+
+:root {
+  --background: #0f172a;
+  --foreground: #e2e8f0;
+  --color-primary: #38bdf8;
+  --color-secondary: #818cf8;
+  --color-card-bg: rgba(30, 41, 59, 0.68);
+  --color-card-border: rgba(148, 163, 184, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--foreground);
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 34rem),
+    radial-gradient(circle at top right, rgba(129, 140, 248, 0.16), transparent 32rem),
+    linear-gradient(180deg, #0f172a 0%, #111827 48%, #0b1120 100%);
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.3);
+  color: white;
+}
+
+.glass {
+  border: 1px solid var(--color-card-border);
+  background: var(--color-card-bg);
+  box-shadow: 0 18px 70px rgba(2, 6, 23, 0.32);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.text-gradient {
+  background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+}
+
+.font-outfit {
+  font-family: var(--font-outfit);
+}
+
+.prism-code {
+  font-family: var(--font-geist-mono);
+}
