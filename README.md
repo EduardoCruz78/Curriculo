@@ -1,25 +1,21 @@
 # Currículo Interativo - Eduardo Proença
 
-Currículo web criado em Next.js para apresentar minha trilha de **Node.js, JavaScript, TypeScript, React e Next.js**, com foco em recrutadores, GitHub e deploy na Vercel.
+Currículo web em Next.js para apresentar minha trilha de **Node.js, JavaScript, TypeScript, React e Next.js**, com foco em recrutadores, GitHub e deploy na Vercel.
 
-Esta versão foi construída para funcionar como um currículo interativo, mas também como uma extensão técnica do meu principal projeto público: **EduPlatformJS**.
+## Links
 
-## Links principais
-
-- Currículo local: `http://localhost:3000`
 - Projeto principal em produção: [EduPlatformJS na Vercel](https://edu-platform-js-five.vercel.app/)
 - Repositório do projeto principal: [EduPlatformJS no GitHub](https://github.com/EduardoCruz78/EduPlatformJS)
 - Perfil GitHub: [EduardoCruz78](https://github.com/EduardoCruz78)
 
-## Objetivo do projeto
+## Objetivo
 
 - Apresentar meu currículo de forma visual, interativa e compatível com ATS.
-- Destacar o EduPlatformJS como principal prova prática da minha experiência com Node/TS.
-- Separar esta trilha da futura versão focada em C#/.NET.
-- Mostrar domínio de Next.js, React, TypeScript, tRPC, Prisma, PostgreSQL, Auth.js, RBAC, testes e CI.
-- Manter uma base simples de publicar na Vercel.
+- Destacar o EduPlatformJS como prova prática da minha experiência com Node/TS.
+- Manter esta versão separada da futura trilha C#/.NET.
+- Publicar facilmente na Vercel.
 
-## Stack deste currículo
+## Stack
 
 - Next.js 16 App Router
 - React 19
@@ -27,73 +23,48 @@ Esta versão foi construída para funcionar como um currículo interativo, mas t
 - Tailwind CSS 4
 - Framer Motion
 - Zod e React Hook Form nas demonstrações
-- lucide-react para iconografia
 
-## Conteúdo do currículo
+## Estrutura
 
-O currículo está organizado em três áreas:
+```text
+src/
+├─ app/                  Rotas, layout e estilos globais
+├─ components/
+│  ├─ resume/            Interface principal do currículo
+│  ├─ demos/             Demonstrações técnicas interativas
+│  └─ ui/                Componentes utilitários
+├─ data/resume.ts        Conteúdo estruturado do currículo
+└─ lib/utils.ts          Utilitários
+```
 
-- **Currículo:** resumo profissional, hard skills, experiências, formação, informações adicionais e palavras-chave ATS.
-- **Projeto Principal:** apresentação do EduPlatformJS, links de produção/GitHub, arquitetura e responsabilidades técnicas.
-- **Demos:** pequenas demonstrações interativas inspiradas em partes reais do EduPlatformJS, como RBAC, checklist com ownership, validação com Zod, acessibilidade e auditoria administrativa.
+## Projeto Principal
 
-## Projeto Principal: EduPlatformJS
+O conteúdo técnico do currículo é baseado no EduPlatformJS, uma plataforma educacional full stack com:
 
-O EduPlatformJS é uma plataforma educacional full stack desenvolvida com:
-
-- Next.js App Router
-- TypeScript
-- tRPC
-- Prisma ORM
-- PostgreSQL
-- Auth.js/NextAuth
-- Google OAuth
+- Next.js App Router, React e TypeScript
+- tRPC, Zod, Auth.js/NextAuth e Google OAuth
+- Prisma ORM e PostgreSQL
 - RBAC com papéis `USER` e `ADMIN`
-- Checklist por usuário autenticado
+- Checklist por usuário autenticado com ownership
 - Módulos de séries, matérias, tópicos, conteúdos, vestibulares, acessibilidade e vida prática
-- Painel administrativo
-- Auditoria de troca de papéis
-- Testes, typecheck, lint, build e CI
+- Painel administrativo, auditoria, testes, typecheck, lint, build e CI
 
-O conteúdo técnico deste currículo foi baseado no projeto local:
+Projeto local usado como referência:
 
 ```text
 C:\Projects\ProjetoEscolar\EduPlatformJS\edu-platform
 ```
 
-## Estrutura do projeto
-
-```text
-.
-├─ src/
-│  ├─ app/                      Rotas, layout global e estilos base
-│  ├─ components/
-│  │  ├─ resume/                Interface principal do currículo
-│  │  ├─ demos/                 Demonstrações técnicas interativas
-│  │  └─ ui/                    Componentes utilitários de UI
-│  ├─ data/
-│  │  └─ resume.ts              Conteúdo estruturado do currículo
-│  └─ lib/
-│     └─ utils.ts               Utilitários de classe/estilo
-├─ public/                      Assets estáticos
-├─ docs/                        Documentação auxiliar
-└─ README.md
-```
-
-## Como rodar localmente
+## Rodando Localmente
 
 ```bash
 npm install
 npm run dev
 ```
 
-Abra:
+Abra `http://localhost:3000`.
 
-```text
-http://localhost:3000
-```
-
-## Validação antes de publicar
+## Validação
 
 ```bash
 npm run lint
@@ -102,24 +73,7 @@ npm run build
 
 ## Deploy na Vercel
 
-O projeto usa os scripts padrão esperados pelo Next.js:
-
-```json
-{
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start",
-  "lint": "eslint"
-}
-```
-
-Na Vercel, use:
-
-- Framework: `Next.js`
-- Build command: `npm run build`
-- Output: automático do Next.js
-
-Este repositório também possui um `vercel.json` para forçar a Vercel a tratar o projeto como Next.js:
+O projeto possui [vercel.json](./vercel.json) para forçar o preset correto:
 
 ```json
 {
@@ -130,16 +84,13 @@ Este repositório também possui um `vercel.json` para forçar a Vercel a tratar
 }
 ```
 
-Se aparecer o erro `No entrypoint found`, verifique no painel da Vercel:
+No painel da Vercel, deixe:
 
-- Root Directory: deve estar vazio ou apontar para a raiz do repositório.
-- Framework Preset: `Next.js`.
-- Build Command: `npm run build`.
-- Install Command: `npm install`.
-- Output Directory: deixe automático, sem preencher manualmente.
+- Framework Preset: `Next.js`
+- Root Directory: raiz do repositório
+- Build Command: `npm run build`
+- Output Directory: automático
 
-## Próximos passos planejados
+## Manutenção do Conteúdo
 
-- Criar uma segunda versão separada do currículo para C#/.NET.
-- Adicionar links definitivos de LinkedIn quando estiverem prontos.
-- Opcionalmente gerar uma versão PDF/ATS baseada no mesmo conteúdo estruturado de `src/data/resume.ts`.
+Edite primeiro [src/data/resume.ts](./src/data/resume.ts). A interface consome esse arquivo para renderizar perfil, habilidades, projeto principal, experiências, formação e informações adicionais.
