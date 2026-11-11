@@ -1,5 +1,12 @@
 # Currículo Interativo - Eduardo Proença
 
+[![Live](https://img.shields.io/badge/site-live-22c55e?logo=vercel&logoColor=white)](https://curriculo-psi-drab.vercel.app)
+![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white)
+![React 19](https://img.shields.io/badge/React-19-20232A?logo=react&logoColor=61DAFB)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=white)
+
+> **EN:** Interactive résumé built with Next.js, React 19, Tailwind CSS and Framer Motion, deployed on Vercel. It highlights my Node.js/TypeScript work and links to the live projects.
+
 Currículo web em Next.js para apresentar minha trilha de **Node.js, JavaScript, TypeScript, React e Next.js**, com foco em recrutadores, GitHub e deploy na Vercel.
 
 ## Links
