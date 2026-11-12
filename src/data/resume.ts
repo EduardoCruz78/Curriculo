@@ -5,7 +5,7 @@ export const profile = {
   phone: "(47) 98480-0605",
   email: "eduardopcruz78@gmail.com",
   github: "https://github.com/EduardoCruz78",
-  linkedin: "https://linkedin.com",
+  linkedin: "https://www.linkedin.com/in/eduardo-proenca-dev",
   role: "Desenvolvedor Full Stack | Node.js | TypeScript | JavaScript | Next.js",
   availability: "Disponível para oportunidades Node.js, TypeScript e Full Stack",
 };
@@ -13,6 +13,7 @@ export const profile = {
 export const summary = [
   "Desenvolvedor Full Stack com foco no ecossistema JavaScript e TypeScript, atuando com Next.js, React, Node.js, tRPC, Prisma, PostgreSQL e arquitetura em camadas.",
   "No EduPlatformJS, evoluí uma plataforma educacional em monorepo com módulos públicos, painel administrativo, autenticação, RBAC, checklist por usuário, acessibilidade, vestibulares e governança de usuários.",
+  "No SchedulingApi, construí uma API REST de agendamentos em ASP.NET Core 10 com cálculo de horários livres, prevenção de agendamento duplo no PostgreSQL, JWT, 193 testes automatizados e demo online.",
   "Perfil autodidata, organizado e orientado a código limpo, regras de negócio bem separadas e produtos que resolvem problemas reais.",
 ];
 
@@ -20,6 +21,10 @@ export const techGroups = [
   {
     title: "Back-end Node/TS",
     items: ["Node.js", "TypeScript", "tRPC", "Zod", "Auth.js/NextAuth", "APIs", "Validação server-side"],
+  },
+  {
+    title: "Back-end .NET",
+    items: ["C#", ".NET 10", "ASP.NET Core", "EF Core", "FluentValidation", "JWT", "xUnit", "Testcontainers"],
   },
   {
     title: "Front-end",
@@ -58,6 +63,22 @@ export const project = {
     { label: "Deploy", value: "Vercel" },
   ],
 };
+
+export const otherProjects = [
+  {
+    name: "SchedulingApi",
+    subtitle: "API REST de agendamentos para pequenos negócios em ASP.NET Core 10, EF Core e PostgreSQL",
+    githubUrl: "https://github.com/EduardoCruz78/SchedulingApi",
+    deployUrl: "https://scheduling-api-gf47.onrender.com/scalar",
+    stack: ["C#", ".NET 10", "EF Core", "PostgreSQL", "Testcontainers", "Docker"],
+    bullets: [
+      "Cálculo de horários livres por profissional, serviço e data, com fuso horário e horário de verão.",
+      "Prevenção de agendamento duplo com exclusion constraint no PostgreSQL, provada por teste de concorrência.",
+      "13 regras de negócio documentadas, JWT com papéis Admin e Cliente, rate limiting e erros em ProblemDetails.",
+      "Clean Architecture + DDD, 193 testes (unitários e de integração com Postgres real), Docker e CI.",
+    ],
+  },
+];
 
 export const experiences = [
   {
@@ -115,6 +136,13 @@ export const atsKeywords = [
   "Vitest",
   "TurboRepo",
   "npm workspaces",
+  "C#",
+  ".NET",
+  "ASP.NET Core",
+  "Entity Framework Core",
+  "xUnit",
+  "Testcontainers",
+  "Docker",
 ];
 
 export const additionalInfo = [

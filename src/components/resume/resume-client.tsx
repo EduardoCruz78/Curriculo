@@ -30,6 +30,7 @@ import {
   atsKeywords,
   education,
   experiences,
+  otherProjects,
   profile,
   project,
   summary,
@@ -39,7 +40,7 @@ import { cn } from "@/lib/utils";
 
 const tabs = [
   { id: "ats", label: "Currículo" },
-  { id: "github", label: "Projeto Principal" },
+  { id: "github", label: "Projetos" },
   { id: "demos", label: "Demos" },
 ] as const;
 
@@ -316,6 +317,55 @@ function GithubView() {
         <ArchitectureCard icon={<Code2 />} title="packages/core" text="Entidades, DTOs, AppError, contratos e use cases sem depender do framework." />
         <ArchitectureCard icon={<Database />} title="packages/infrastructure" text="Prisma, mappers, repositories, validação de ambiente e composição concreta." />
       </motion.section>
+
+      {otherProjects.map((other) => (
+        <motion.section key={other.name} variants={item} className="glass rounded-3xl p-5 sm:p-8">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <div className="mb-2 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-indigo-400">
+                <Server size={16} />
+                Outros projetos
+              </div>
+              <h2 className="font-outfit text-2xl font-bold text-white sm:text-3xl">{other.name}</h2>
+              <p className="mt-3 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">{other.subtitle}</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {other.stack.map((tech) => (
+                  <span key={tech} className="rounded-md border border-slate-700 bg-slate-900/70 px-2.5 py-1 font-mono text-xs text-slate-300">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
+              <a
+                href={other.deployUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-indigo-500 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-400 sm:w-auto"
+              >
+                Demo online <ArrowUpRight size={16} />
+              </a>
+              <a
+                href={other.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-semibold text-slate-200 hover:border-indigo-500/50 hover:text-indigo-300 sm:w-auto"
+              >
+                Repositório GitHub <ArrowUpRight size={16} />
+              </a>
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-3 lg:grid-cols-2">
+            {other.bullets.map((bullet) => (
+              <div key={bullet} className="flex gap-3 rounded-xl border border-slate-700/50 bg-slate-900/60 p-4 text-sm leading-6 text-slate-300">
+                <CheckCircle2 className="mt-0.5 shrink-0 text-indigo-400" size={18} />
+                <span>{bullet}</span>
+              </div>
+            ))}
+          </div>
+        </motion.section>
+      ))}
     </motion.div>
   );
 }
