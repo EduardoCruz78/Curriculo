@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    // Shareable English link: /?lang=en goes to the English page.
+    return [{ source: "/", has: [{ type: "query", key: "lang", value: "en" }], destination: "/en", permanent: false }];
+  },
 };
 
 export default nextConfig;
