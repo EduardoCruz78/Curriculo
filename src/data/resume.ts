@@ -42,6 +42,8 @@ type Content = {
     linkedin: string;
     email: string;
     github: string;
+    pdf: string;
+    pdfHref: string;
   };
   map: {
     title: string;
@@ -135,6 +137,8 @@ export const content: Record<Lang, Content> = {
       linkedin: "Falar no LinkedIn",
       email: "E-mail",
       github: "GitHub",
+      pdf: "Currículo em PDF",
+      pdfHref: "/Eduardo-Proenca-Curriculo-PT.pdf",
     },
     map: {
       title: "Mapa dos projetos",
@@ -297,6 +301,8 @@ export const content: Record<Lang, Content> = {
       linkedin: "Message me on LinkedIn",
       email: "Email",
       github: "GitHub",
+      pdf: "Résumé (PDF)",
+      pdfHref: "/Eduardo-Proenca-Resume-EN.pdf",
     },
     map: {
       title: "Project map",
