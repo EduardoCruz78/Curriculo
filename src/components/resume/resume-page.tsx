@@ -1,4 +1,4 @@
-import { ArrowUpRight, Mail, Phone } from "lucide-react";
+import { ArrowUpRight, FileDown, Mail, Phone } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { contact, content, lines, type Lang } from "@/data/resume";
 import { NetworkMap } from "./network-map";
@@ -67,6 +67,10 @@ export function ResumePage({ lang }: { lang: Lang }) {
               <a href={contact.github} className="btn" target="_blank" rel="noreferrer">
                 <FaGithub aria-hidden="true" />
                 {t.hero.github}
+              </a>
+              <a href={t.hero.pdfHref} className="btn" download>
+                <FileDown aria-hidden="true" size={18} />
+                {t.hero.pdf}
               </a>
             </div>
             <p className="hero-location">{t.hero.location}</p>
@@ -230,6 +234,12 @@ export function ResumePage({ lang }: { lang: Lang }) {
                 <a href={contact.github} target="_blank" rel="noreferrer">
                   <FaGithub aria-hidden="true" />
                   github.com/EduardoCruz78
+                </a>
+              </li>
+              <li>
+                <a href={t.hero.pdfHref} download>
+                  <FileDown aria-hidden="true" size={20} />
+                  {t.hero.pdf}
                 </a>
               </li>
             </ul>
